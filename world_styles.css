@@ -1,0 +1,40 @@
+.pbta.sheet.actor section.window-content {
+  background-color: #5064bd;
+  color: #323427;
+}
+.pbta.sheet .cell__title {
+  color: #323427;
+}
+.pbta.sheet .cell__title,
+.pbta.sheet section.sheet-main nav.sheet-tabs.tabs {
+  border-bottom-color: #323427;
+}
+.pbta.sheet section.sheet-main nav.sheet-tabs.tabs a.item {
+  background: #daba51;
+  border-color: #c59f20;
+}
+.pbta.sheet section.sheet-main nav.sheet-tabs.tabs a.item.active {
+  background: #240c7c;
+}
+.pbta.sheet section.sheet-main nav.sheet-tabs.tabs a.item:hover {
+  background: #df9308;
+}
+.pbta.sheet .sheet-attributes .cell--stats .stat {
+  background: #321a86;
+}
+.pbta.sheet .sheet-attributes .cell--stats .stat:hover {
+  background: #0d0331;
+}
+.pbta.sheet .cell__title,
+.pbta.sheet .sheet-attributes .cell--stats .stat {
+  color: #e6c532;
+  background: #321a86;
+}
+.pbta.sheet .cell__title,
+.pbta.sheet .sheet-attributes .cell--stats .stat:hover {
+  color: #e6c532;
+  background: #160358;
+}
+.pbta.sheet .sheet-wrapper .editor-content {
+  color: #021a53;
+}

@@ -1,0 +1,237 @@
+rollFormula = "2d6"
+statToggle = false
+
+# Define roll result ranges.
+[rollResults]
+  [rollResults.failure]
+    range = "6-"
+    label = "Complications..."
+  [rollResults.partial]
+    range = "7-9"
+    label = "Partial success"
+  [rollResults.success]
+    range = "10" # or "10-12" if using crits
+    label = "Success!"
+  [rollResults.critical]
+    range = false # or "13+" to enable
+    label = "Critical Success!"
+
+########################################
+## CHARACTERS ##########################
+########################################
+[character]
+
+  # Define stats.
+  [character.stats]
+    athleticism = "Athleticism"
+    proficiency = "Proficiency"
+    guts = "Guts"
+    knowledge = "Knowledge"
+    charm = "Charm"
+
+  # Define attributes.
+  [character.attributesTop]
+    [character.attributesTop.arcanaPoints]
+      type = "Xp"
+      label = "Arcana Points"
+      max = 3
+    [character.attributesTop.axpAthleticism]
+      type = "Resource"
+      label = "Athleticism (AXP)"
+    [character.attributesTop.axpProficiency]
+      type = "Resource"
+      label = "Proficiency (AXP)"
+    [character.attributesTop.axpGuts]
+      type = "Resource"
+      label = "Guts (AXP)"
+    [character.attributesTop.axpKnowledge]
+      type = "Resource"
+      label = "Knowledge (AXP)"
+    [character.attributesTop.axpCharm]
+      type = "Resource"
+      label = "Charm (AXP)"
+
+
+  # Define sidebar details.
+  [character.attributesLeft]
+    gender = "Text"
+    age = "Number"
+    occupation = "Text"
+    suit = "Text"
+      
+  # Define equipment types
+  [character.equipmentTypes]
+    gear = "Gear"
+    
+  # Define logical groups for moves.
+  [character.moveTypes]
+    weapons = "Weapon Attacks"
+  
+  [character.description.personality]
+    label = "Personality"
+    value = "Character's Personality and any Quirks"
+
+  [character.description.background]
+    label = "Background"
+    value = "Character's history and origins"
+
+  [character.description.goals]
+    label = "Goals & Motivations"
+    value = "What drives this character"
+    
+  [character.description.likesdislikes]
+    label = "Likes and Dislikes"
+    value = "Character's Likes and Dislikes"
+    
+  [character.description.ideals]
+    label = "Ideals"
+    value = "Character's Ideals"
+  
+  [character.description.flaws]
+    label = "Flaws"
+    value = "Character's Flaws"
+  
+  [character.description.secrets]
+    label = "Secrets"
+    value = "Hidden information"
+    limited = true              # Only visible to owners
+  
+  [character.description.class-notes]
+    label = "Class Notes"
+    value = "Playbook-specific information"
+    playbook = true            # Only shows when playbook selected
+
+ ########################################
+ ########################################   
+    
+[persona]
+label = "Persona"           # Display name
+baseType = "character"      # Has stats like character.
+
+  # Define stats.
+  [persona.stats]
+    strength = "Strength"
+    magic = "Magic"
+    endurance = "Endurance"
+    agility = "Agility"
+    luck = "Luck"
+
+  # Define attributes.
+  [persona.attributesTop]
+    [persona.attributesTop.hp]
+      type = "Resource"
+      label = "Health Points"
+    [persona.attributesTop.sp]
+      type = "Resource"
+      label = "Spirit Points"
+    [persona.attributesTop.armor]
+      type = "Number"
+    [persona.attributesTop.experience]
+      type = "Resource"
+      label = "Experience Points"
+
+  # Define sidebar details.
+  [persona.attributesLeft]
+    affinities = "Text"
+    bloodLines = "Text"
+    willpower = "Number"
+    #gender = "Text"
+    #age = "Number"
+    #occupation = "Text"
+    #suit = "Text"
+    [persona.attributesLeft.luck]
+      type = "Resource"
+      label = "Luck"
+    [persona.attributesLeft.resistances]
+	    type = "ListMany"
+      label = "Resistances [WEAK, NEU, RES]"
+      options = ["Physical|3", "Ranged|3", "Fire|3", "Ice|3", "Wind|3", "Electric|3", "Psychic|3", "Nuclear|3", "Bless|3", "Curse|3"]
+    # LongText is for expandable blocks like bios
+    
+      
+  # Define equipment types
+  [persona.equipmentTypes]
+    gear = "Gear"
+
+  # Define logical groups for moves.
+  [persona.moveTypes]
+    persona = "Persona"
+    arcana = "Arcana"
+    suit = "Suit"
+
+########################################
+## NPCS ################################
+########################################
+# Define stats.
+[npc]
+  stats = false
+
+  # Define attributes.
+  [npc.attributesTop]
+    [npc.attributesTop.armor]
+      type = "Number"
+    [npc.attributesTop.harm]
+      type = "Clock"
+      max = 6
+    [npc.attributesTop.damage]
+      type = "Roll"
+      default = "d10"
+
+  [npc.attributesLeft]
+    [npc.attributesLeft.bio]
+      type = "LongText"
+
+  # Define equipment types
+  [npc.equipmentTypes]
+    gear = "Gear"
+    
+  # Define logical groups for moves.
+  [npc.moveTypes]
+    basic = "Basic"
+
+[shadow]
+  label = "Shadow"            # Display name
+  baseType = "npc"            # Has stats like character.
+  
+  stats = false
+
+  # Define attributes.
+  [shadow.attributesTop]
+    [shadow.attributesTop.hp]
+      type = "Resource"
+      label = "Health Points"
+    [shadow.attributesTop.armor]
+      type = "Number"
+    [shadow.attributesTop.strength]
+      type = "Number"
+    [shadow.attributesTop.agility]
+      type = "Number"
+    [shadow.attributesTop.endurance]
+      type = "Number"
+    [shadow.attributesTop.magic]
+      type = "Number"
+
+  [shadow.attributesLeft]
+    arcana = "Text"
+    attitude = "Text"
+    [shadow.attributesLeft.resistances]
+	    type = "ListMany"
+      label = "Affinities [WEAK, NEU, RES]"
+      options = ["Physical|3", "Ranged|3", "Fire|3", "Ice|3", "Wind|3", "Electric|3", "Psychic|3", "Nuclear|3", "Bless|3", "Curse|3"]
+    [shadow.attributesLeft.bio]
+      type = "LongText"
+
+  # Define equipment types
+  [shadow.equipmentTypes]
+    gear = "Gear"
+    
+  # Define logical groups for moves.
+  [shadow.moveTypes]
+    skills = "Skills"
+    passives = "Active / Passive Moves"
+  [shadow.description.strategy]
+    label = "Description and Strategy"
+    value = "Shadows's Description and Strategy"
+  [shadow.description.loottable]
+    label = "Loot Tables"
+    value = "Shadows's Loot Tables"
